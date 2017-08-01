@@ -41,7 +41,7 @@ ZSH_THEME="agnoster"
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
 # The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# HIST_STAMPS="mm/dd/yyyy"
+HIST_STAMPS="mm/dd/yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
@@ -55,14 +55,10 @@ plugins=(git)
 # User configuration
 
 alias ls='ls --color=auto'
-export PATH="/usr/local/bin/activator/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/sosa/.gem/ruby/2.2.0/bin:/usr/local/heroku/bin:/home/sosa/.gem/ruby/2.3.0/bin:/usr/lib/ssh:$HOME/.composer/vendor/bin:$PATH"
-export ANDROID_HOME=/data/android-sdk
-# export MANPATH="/usr/local/man:$MANPATH"
-
 source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -90,8 +86,20 @@ compinit
 promptinit
 
 setxkbmap gb
-export TERM=xterm-256color
-export LC_ALL=en_US.UTF-8
-source /usr/share/nvm/init-nvm.sh
+
+#source /usr/share/nvm/init-nvm.sh
 alias veriscan='cd ~/Document/project/telecom2/veriscan'
 alias tebip='cd ~/Document/project/telecom2/scotchbox/tebip'
+
+export PATH="/usr/local/bin/activator/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/sosa/.gem/ruby/2.2.0/bin:/usr/local/heroku/bin:/home/sosa/.gem/ruby/2.3.0/bin:/usr/lib/ssh:$HOME/.composer/vendor/bin:/home/sosa/.eclipse/org.eclipse.platform_4.6.3_155965261_linux_gtk_x86_64:$PATH"
+export ANDROID_HOME=/data/android-sdk
+export TERM=rxvt
+export LC_ALL=en_US.UTF-8
+# export MANPATH="/usr/local/man:$MANPATH"
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/sosa/.sdkman"
+[[ -s "/home/sosa/.sdkman/bin/sdkman-init.sh" ]] && source "/home/sosa/.sdkman/bin/sdkman-init.sh"
+source /usr/share/nvm/init-nvm.sh
+export TERM="rxvt-unicode-256color"
+

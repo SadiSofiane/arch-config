@@ -1,3 +1,4 @@
+URxvt.termName:         rxvt-256color
 !-------------------------------------------------------------------------------
 ! URxvt settings
 ! Colours lifted from Solarized (http://ethanschoonover.com/solarized)
@@ -15,90 +16,89 @@ URxvt*cutchars: '"'()*<>[]{|}
 
 URxvt.depth:                32
 URxvt.geometry:             90x30
-URxvt.transparent:          false
 URxvt.fading:               0
-! URxvt.urgentOnBell:         true
-! URxvt.visualBell:           true
+URxvt.urgentOnBell:         true
+URxvt.visualBell:           true
 URxvt.loginShell:           true
 URxvt.saveLines:            65535
 URxvt.internalBorder:       3
 URxvt.lineSpace:            0
  
+URxvt.underlineColor: yellow
+URxvt.borderless: 1
+
 ! Fonts
 URxvt.allow_bold:           false
 
 URxvt*font:      xft:Source Code Pro:pixelsize=13:style=Normal
 URxvt*boldFont:  xft:Source Code Pro:pixelsize=13:style=Semibold
-
-! Plugins
-URxvt.perl-ext-common:  default,matcher,tabbedex
+! Fonts
+URxvt.allow_bold:           false
 
 ! Fix font space
 URxvt*letterSpace: -1
- 
+
 ! Scrollbar
 URxvt.scrollStyle:          rxvt
 URxvt.scrollBar:            false
- 
+
 ! Perl extensions
+!URxvt.perl-ext-common:      default,matcher
 URxvt.matcher.button:       1
-URxvt.url-launcher:         firefox
- 
+URxvt.urlLauncher:          chromium
+
 ! Cursor
 URxvt.cursorBlink:          true
+URxvt.cursorColor:          #657b83
 URxvt.cursorUnderline:      false
- 
+
 ! Pointer
 URxvt.pointerBlank:         true
- 
+
 !!Source http://github.com/altercation/solarized
- 
-URxvt*background: #002b36
-URxvt*foreground: #657b83
-URxvt*fading: 40
-URxvt*fadeColor: #002b36
-URxvt*cursorColor: #93A1A1
-URxvt*underlineColor: #F0DFAF
-URxvt*colorBD: #E0CF9F
-URxvt*colorIT: #656555
-URxvt*pointerColorBackground: #586e75
-URxvt*pointerColorForeground: #93a1a1
 
-!! black dark/light
-URxvt*color0: #073642
-URxvt*color8: #002b36
- 
-!! red dark/light
-URxvt*color1: #dc322f
-URxvt*color9: #cb4b16
- 
-!! green dark/light
-URxvt*color2: #859900
-URxvt*color10: #586e75
- 
-!! yellow dark/light
-URxvt*color3: #b58900
-URxvt*color11: #657b83
- 
-!! blue dark/light
-URxvt*color4: #269BD2
-URxvt*color12: #839496
- 
-!! magenta dark/light
-URxvt*color5: #d33682
-URxvt*color13: #6c71c4
- 
-!! cyan dark/light
-URxvt*color6: #2aa198
-URxvt*color14: #93a1a1
- 
-!! white dark/light
-URxvt*color7: #eee8d5
-URxvt*color15: #fdf6e3
+*background: #002b36
+*foreground: #657b83
+!!*fading: 40
+*fadeColor: #002b36
+*cursorColor: #93a1a1
+*pointerColorBackground: #586e75
+*pointerColorForeground: #93a1a1
 
-URxvt.url-launcher: dwb
-URxvt.matcher.button:   1
-URxvt.colorUL: #4682B4
-URxvt.tabbed.autohide:  no
-URxvt.tabbed.new-button:  no
-URxvt.tabbed.title: yes
+! PaperColour Theme
+
+URxvt.foreground: #4D4D4C
+URxvt.background: #EEEEEE
+
+! black
+URxvt.color0: #EDEDED
+URxvt.color8: #969694
+
+! red
+URxvt.color1: #D7005F
+URxvt.color9: #D7005F
+
+! green
+URxvt.color2: #718C00
+URxvt.color10: #718C00
+
+! yellow / orange
+URxvt.color3: #D75F00
+URxvt.color11: #D75F00
+
+! blue
+
+URxvt.color4: #4271AE
+URxvt.color12: #4271AE
+
+! magenta
+URxvt.color5: #8959A8
+URxvt.color13: #8959A8
+
+! cyan
+URxvt.color6: #3E999F
+URxvt.color14: #3E999F
+
+! white
+URxvt.color7: #4D4D4C
+URxvt.color15: #F5F5F5

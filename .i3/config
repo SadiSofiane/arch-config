@@ -3,15 +3,11 @@ set $mod Mod4
 font xft:Inconsolata Medium 8
 font pango:Inconsolata Light 10
 
-new_window pixel 3
+new_window pixel 2
 focus_follows_mouse  no
 
 #don't move to neighbouring screen with hjkl
 force_focus_wrapping yes
-
-set $blue #005588
-set $gray1 #484848
-set $gray2 #333333
 
 # use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -76,38 +72,60 @@ bindsym $mod+q workspace q: ide
 bindsym $mod+w workspace w: shell
 bindsym $mod+e workspace e: server
 bindsym $mod+r workspace r: perso
-bindsym $mod+t workspace t: sql
+bindsym $mod+t workspace t: testing
 bindsym $mod+y workspace y: design
 bindsym $mod+u workspace u: view
 bindsym $mod+i workspace i: communication
 bindsym $mod+o workspace o: file-manager
+
+bindsym $mod+1 workspace 1: email
+bindsym $mod+2 workspace 2: file-editor
+bindsym $mod+3 workspace 3: ssh
+bindsym $mod+4 workspace 4: logs
+bindsym $mod+5 workspace 5: monitoring
+bindsym $mod+8 workspace 8: frontend
+bindsym $mod+9 workspace 9: remote
+bindsym $mod+0 workspace 0: trash
 
 # move focused container to workspace
 bindsym $mod+Shift+q move container to workspace q: ide
 bindsym $mod+Shift+w move container to workspace w: shell
 bindsym $mod+Shift+e move container to workspace e: server
 bindsym $mod+Shift+r move container to workspace r: perso
-bindsym $mod+Shift+t move container to workspace t: sql
+bindsym $mod+Shift+t move container to workspace t: testing
 bindsym $mod+Shift+y move container to workspace y: design
 bindsym $mod+Shift+u move container to workspace u: view
 bindsym $mod+Shift+i move container to workspace i: communication
 bindsym $mod+Shift+o move container to workspace o: file-manager
+
+bindsym $mod+Shift+1 move container to workspace 1: email
+bindsym $mod+Shift+2 move container to workspace 2: file-editor
+
+bindsym $mod+Shift+3 move container to workspace 3: ssh
+bindsym $mod+Shift+4 move container to workspace 4: logs
+bindsym $mod+Shift+5 move container to workspace 5: monitoring
+
+bindsym $mod+Shift+8 move container to workspace 8: frontend
+
+bindsym $mod+Shift+9 move container to workspace 9: remote
+
+bindsym $mod+Shift+0 move container to workspace 0: trash
 
 bindsym $mod+z reload
 bindsym $mod+Shift+x restart
 bindsym $mod+Shift+z exit
 
 mode "resize" {
-	bindsym h   resize shrink width 10 px or 10 ppt
-		bindsym j   resize grow height 10 px or 10 ppt
-		bindsym k   resize shrink height 10 px or 10 ppt
-		bindsym l   resize grow width 10 px or 10 ppt
+        bindsym h   resize shrink width 10 px or 10 ppt
+        bindsym j   resize grow height 10 px or 10 ppt
+        bindsym k   resize shrink height 10 px or 10 ppt
+        bindsym l   resize grow width 10 px or 10 ppt
 
-# back to normal: Enter or Escape or q or ^[
-		bindsym Return mode "default"
-		bindsym q mode "default"
-		bindsym Escape mode "default"
-		bindcode Control+34 mode "default"
+        # back to normal: Enter or Escape or q or ^[
+        bindsym Return mode "default"
+        bindsym q mode "default"
+        bindsym Escape mode "default"
+        bindcode Control+34 mode "default"
 }
 
 bindsym $mod+s mode "resize"
@@ -127,26 +145,36 @@ bindsym XF86Display exec "arandr"
 bindsym $mod+a exec "urxvt -e alsamixer"
 bindsym $mod+Shift+a exec "pavucontrol"
 
+
+# class                 border  backgr. text    indicator child_border
+client.focused          #00bfff #00bfff #000000 #00bfff
+client.focused_inactive #a9a9a9 #a9a9a9 #000000 #000000
+client.unfocused        #000000 #000000 #000000 #000000
+client.urgent           #d33682 #d33682 #fdf6e3 #dc322f
+
+client.background       #000000
+
+
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
     colors {
         # Whole color settings
-        background #000000
-            statusline #ffffff
-            separator  #666666
-            focused_workspace  #008fff #007fff #ffffff
-            active_workspace   #333333 #5f676a #ffffff
-            inactive_workspace #333333 #222222 #888888
+            background #ffffff
+            statusline #000000
+            separator  #000000
+            focused_workspace  #00bfff #00bfff #FFFFFF
+            active_workspace   #000000 #000000 #ffffff
+            inactive_workspace #000000 #FFFFFF #000000
             urgent_workspace   #aa0000 #990000 #ffffff
     }
     # i3bar position
     position top
     # Using custom i3status.conf
+    bindsym button1 nop
     status_command /usr/bin/python3 ~/.i3/pyconfig.py
 }
 
-client.focused #859900 #859900 #fdf6e3 #859900
-client.focused_inactive #073642 #073642 #eee8d5 #6c71c4
-client.unfocused #073642 #073642 #93a1a1 #586e75
-client.urgent #d33682 #d33682 #fdf6e3 #dc322f
+# Starting redshift
+exec --no-startup-id redshift
+exec feh --bg-scale ~/.i3/wallpaper/archlinux.jpg
